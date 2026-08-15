@@ -3,7 +3,7 @@ const pool = require('../config/db');
 
 async function listar() {
     const [linhas] = await pool.query(
-        'SELECT = FROM categorias ORDER BY nome'
+        'SELECT * FROM categorias ORDER BY nome'
     );
     return linhas;    
 }

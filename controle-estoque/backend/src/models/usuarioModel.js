@@ -26,4 +26,4 @@ async function criar({nome, email, senha_hash}) {
     return {id: resultado.insertId, nome, email};
 }
 
-module.expors = {buscarPorEmail, buscarPorId, criar};
+module.exports = {buscarPorEmail, buscarPorId, criar};

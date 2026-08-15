@@ -301,7 +301,15 @@ async function salvarMovimentacao() {
   aviso('Movimentacao registrada.');
   carregarMovimentacoes();
 }
- 
+
+async function excluirMovimentacao(id) {
+  if (!confirm('Excluir esta movimentação?')) return;
+  try {
+    await http.del('/movimentacoes/' + id);
+    aviso('Movimentação excluida.');
+    carregarMovimentacoes();
+  } catch (e) { aviso(e.message, 'erro'); }
+}
 // ---------- Despacha o "Salvar" do modal ----------
 async function salvarModal() {
   try {

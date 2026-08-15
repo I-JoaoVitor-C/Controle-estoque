@@ -9,7 +9,7 @@ USE controle_estoque;
 
 INSERT INTO usuarios (nome, email, senha_hash) VALUES
     ('Administrador', 'admin@estoque.com',
-    '$2a$10$10$Pzk56Ifp9RBmCo/YWXezOu13s92v0WGsoHexX/RUwBo7YKNOmvEQ.');
+    '$2a$10$Pzk56Ifp9RBmCo/YWXezOu13s92v50WGsoHeX/RUwBo7YKNOmvEQ.');
 
 -- Categorias
 INSERT INTO categorias (nome, descricao) VALUES

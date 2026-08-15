@@ -17,6 +17,8 @@ async function criar(req, res, next) {
  
 async function excluir(req, res, next) {
   try {
+    console.log('>> Rota de exclusão chamada! ID recebido:', req.params.id);
+
     await service.excluir(req.params.id);
     res.status(204).send();
   } catch (e) { next(e); }
