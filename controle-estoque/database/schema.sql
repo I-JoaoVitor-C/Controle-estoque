@@ -52,7 +52,7 @@ CREATE TABLE produtos (
     criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_produto_categoria
         FOREIGN KEY(categoria_id) REFERENCES categorias(id)
-        ON UPDATE CADSCADE
+        ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE=InnoDB;
 
@@ -65,7 +65,7 @@ CREATE TABLE movimentacoes (
     produto_id INT NOT NULL,
     usuario_id INT NOT NULL,
     tipo ENUM('ENTRADA','SAIDA') NOT NULL,
-    quantido INT NOT NULL,
+    quantidade INT NOT NULL,
     observacao VARCHAR(255) NULL,
     criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_mov_produto
@@ -73,7 +73,7 @@ CREATE TABLE movimentacoes (
         ON UPDATE CASCADE
         ON DELETE CASCADE,
     CONSTRAINT fk_mov_usuario
-        FOREIGN KEY(usuario_id) REFERENCES uuarios(id)
+        FOREIGN KEY(usuario_id) REFERENCES usuarios(id)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE=InnoDB;
